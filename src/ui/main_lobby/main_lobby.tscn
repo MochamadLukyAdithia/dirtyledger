@@ -192,8 +192,9 @@ texture_hover = ExtResource("9_mjkbr")
 ignore_texture_size = true
 stretch_mode = 0
 
+[connection signal="pressed" from="Panel2/LeftPanel/DailyQuestionButton" to="." method="_on_button_lab"]
 [connection signal="pressed" from="Panel2/LeftPanel/DailyQuestionButton4" to="." method="_on_button_exit"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button" to="." method="_on_prologue_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button" to="." method="_on_prologue_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/HBoxContainer/Button" to="." method="_on_deposition_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/HBoxContainer/Button2" to="." method="_on_subpoena_button_pressed"]

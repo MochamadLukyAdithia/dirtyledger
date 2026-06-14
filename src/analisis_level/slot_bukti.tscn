@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://mbfp86w6u3wj"]
+
+[ext_resource type="Script" uid="uid://djuhy2we6l7up" path="res://src/analisis_level/slot_bukti.gd" id="1_68uxc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6mt2c"]
+
+[node name="slot_bukti" type="Panel" unique_id=110260605]
+offset_left = 25.0
+offset_top = 169.0
+offset_right = 309.0
+offset_bottom = 556.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_6mt2c")
+script = ExtResource("1_68uxc")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=808177104]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 49.0
+offset_right = 233.0
+offset_bottom = 253.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="." unique_id=2007163254]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 15.0
+offset_right = 260.0
+offset_bottom = 61.0
+horizontal_alignment = 1
+
+[node name="button_analisis" type="Button" parent="." unique_id=237657384]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 321.0
+offset_right = 178.0
+offset_bottom = 352.0
+text = "Analisis"
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=2088274244]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 271.0
+offset_right = 225.0
+offset_bottom = 298.0
+
+[node name="Timer" type="Timer" parent="." unique_id=1072991275]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,6 +1,6 @@
 extends Node2D
 
-var bukti_ditemukan = []
+var bukti_ditemukan : Array[String] = []
 var total_bukti = 3
 
 # Daftar barang yang dicari di level ini
@@ -42,8 +42,11 @@ func _ready():
 	$CanvasLayer/MissionSuccessPanel.lanjut_ke_analisis.connect(_on_ke_tahap_berikutnya)
 
 func _on_ke_tahap_berikutnya():
+	# Amankan data bukti ke Autoload Global sebelum scene dihancurkan
+	Global.bukti_ditemukan = bukti_ditemukan
+	
 	# PERBAIKAN: Tambahkan () setelah get_tree
-	get_tree().call_deferred("change_scene_to_file", "res://src/analisis_level/analisis.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://src/analisis_level/analisis_utama.tscn")
 
 func buat_daftar_teks_misi():
 	# Bersihkan container kalau ada sisa

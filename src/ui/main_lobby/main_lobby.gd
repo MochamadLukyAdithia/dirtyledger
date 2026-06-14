@@ -65,6 +65,8 @@ func show_energy_warning() -> void:
 	print("Energi tidak cukup! Silakan tunggu beberapa menit lagi atau beli di toko.")
 	# Di sini nanti kamu bisa memunculkan pop-up UI peringatan di game kamu jika ada
 
-
+func _on_button_lab() -> void:
+	get_tree().change_scene_to_file("res://src/analisis_level/analisis_utama.tscn")
+	
 func _on_button_exit() -> void:
 	get_tree().quit()

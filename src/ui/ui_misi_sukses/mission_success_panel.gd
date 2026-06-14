@@ -33,5 +33,4 @@ func lanjutkan() -> void:
 	print("DEBUG: Sinyal berpindah ke Tahap Analisis Bukti dipicu.")
 	
 	# Pemicu perpindahan scene langsung dari panel sukses
-	get_tree().change_scene_to_file("res://src/analisis_level/analisis.tscn")
 	emit_signal("lanjut_ke_analisis")
