@@ -1,28 +1,53 @@
 extends Control
 
-# Memastikan tipe data node sesuai dengan tipe di susunan Scene
 @onready var portrait_node: TextureRect = $CharPortrait
 @onready var name_label: Label = $DialoguePanel/CharName
-@onready var text_label: RichTextLabel = $DialoguePanel/DialogueText # Sudah RichTextLabel
+@onready var text_label: RichTextLabel = $DialoguePanel/DialogueText
 
-# Array dinamis untuk menampung data dari JSON induk
+# Sesuai dengan hierarchy di screenshot kamu, namanya adalah $Background
+@onready var background_node: TextureRect = $Background
+
 var all_chapters_data: Dictionary = {}
 var story_data: Array = []
 var current_dialogue_index: int = 0
-var is_paused: bool = false
+var status_dialog: String = "intro"
+
+# Sinyal untuk memberi tahu meja analisis kalau dialog intro analisis sudah selesai
+signal dialog_selesai
 
 func _ready() -> void:
 	portrait_node.hide()
-	
-	# 1. Load seluruh data dari satu file JSON induk
 	load_all_chapters_from_json("res://src/data/all_chapters.json")
 	
-	# 2. Ambil chapter aktif sesuai dengan tombol yang diklik di Menu Awal (Global Autoload)
+	# Ambil status dialog dari Global Autoload sebagai default awal
+	if "current_dialog_status" in Global:
+		status_dialog = Global.current_dialog_status
+		
+	atur_tampilan_background()
 	set_active_chapter(Global.current_chapter)
-	
-	# 3. Jalankan update dialog pertama kali untuk memunculkan teks indeks 0
 	update_dialogue()
 
+# Fungsi baru untuk memaksa pengaturan status dialog saat di-instantiate dari script lain
+func init_dialog(custom_status: String) -> void:
+	status_dialog = custom_status
+	atur_tampilan_background()
+	set_active_chapter(Global.current_chapter)
+	update_dialogue()
+
+func atur_tampilan_background() -> void:
+	# Jika node belum siap (di-instantiate lewat kode), tunggu sampai masuk tree
+	if not is_inside_tree():
+		await ready
+		
+	# Sembunyikan background JIKA statusnya adalah analysis_intro
+	if status_dialog == "analysis_intro":
+		if background_node:
+			background_node.visible = false
+			print("DEBUG DIALOG: Menyembunyikan background secara paksa untuk overlay analisis.")
+	else:
+		if background_node:
+			background_node.visible = true
+			print("DEBUG DIALOG: Menampilkan background untuk mode cerita full.")
 
 func load_all_chapters_from_json(file_path: String) -> void:
 	if FileAccess.file_exists(file_path):
@@ -33,57 +58,58 @@ func load_all_chapters_from_json(file_path: String) -> void:
 		var parsed_data = JSON.parse_string(json_string)
 		if parsed_data is Dictionary:
 			all_chapters_data = parsed_data
-		else:
-			push_error("Format data tingkat atas JSON harus objek {}")
-	else:
-		push_error("File JSON cerita tidak ditemukan di path: " + file_path)
-
 
 func set_active_chapter(chapter_key: String) -> void:
 	if all_chapters_data.has(chapter_key):
-		story_data = all_chapters_data[chapter_key]
-		current_dialogue_index = 0 # Reset ke awal baris dialog teks
-		print("Memuat cerita: ", chapter_key, " | Total baris: ", story_data.size())
-	else:
-		push_error("ID Chapter tidak ditemukan di JSON: " + chapter_key)
-
+		var data_chapter = all_chapters_data[chapter_key]
+		
+		if data_chapter is Dictionary:
+			if data_chapter.has(status_dialog):
+				story_data = data_chapter[status_dialog]
+				print("DEBUG DIALOG: Memuat sub-key [", status_dialog, "] dengan jumlah baris: ", story_data.size())
+			else:
+				push_error("ERROR DIALOG: Sub-key '" + status_dialog + "' tidak ditemukan!")
+				story_data = []
+		elif data_chapter is Array:
+			story_data = data_chapter
+			print("DEBUG DIALOG: Memuat Array polos dengan jumlah baris: ", story_data.size())
+			
+		current_dialogue_index = 0
 
 func update_dialogue():
-	# Memastikan indeks masih berada di dalam batas jumlah baris cerita di JSON
 	if current_dialogue_index < story_data.size():
 		var data = story_data[current_dialogue_index]
-		
-		# Set text langsung ke properti text milik Label dan RichTextLabel
 		name_label.text = str(data.get("name", ""))
 		text_label.text = str(data.get("text", ""))
 		
 		var portrait_path = data.get("portrait", "")
-		
-		# Ganti portrait karakter jika diatur di JSON dan filenya ada
 		if not portrait_path.is_empty() and ResourceLoader.exists(portrait_path):
 			portrait_node.texture = load(portrait_path)
 			portrait_node.show()
 		else:
 			portrait_node.hide()
 	else:
-		# Pindah scene HANYA KETIKA seluruh data baris di chapter tersebut sudah habis dibaca
-		handle_chapter_routing()
-
+		handle_dialogue_end_routing()
 
 func _on_next_button_pressed():
-	# Naikkan indeks setiap kali tombol Next ditekan pemain
 	current_dialogue_index += 1
 	update_dialogue()
-
-
-func handle_chapter_routing():
-	print("DEBUG: Selesai membaca seluruh cerita di ", Global.current_chapter)
+func handle_dialogue_end_routing():
+	emit_signal("dialog_selesai")
 	
-	# Semua chapter diarahkan ke scene level pencarian yang sama (level1.tscn)
-	# Nanti di dalam level1.tscn baru kita filter aset/barangnya berdasarkan chapter aktif
-	get_tree().change_scene_to_file("res://src/search_level/level1.tscn")
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
+	if status_dialog == "analysis_intro":
+		print("DEBUG DIALOG ROUTING: Selesai Analysis Intro -> Menghapus Overlay Dialog.")
+		queue_free()
+	elif status_dialog == "analysis_outro":
+		print("DEBUG DIALOG ROUTING: Selesai Analysis Outro -> Pindah ke Scene Suspek.")
+		get_tree().change_scene_to_file("res://src/suspect_level/pemilihan_suspek.tscn")
+	elif status_dialog == "suspect_intro":
+		print("DEBUG DIALOG ROUTING: Selesai Suspect Intro -> Bebas memilih suspek.")
+		queue_free()
+	else:
+		if Global.current_chapter == "chapter_1" and status_dialog == "intro":
+			get_tree().change_scene_to_file("res://src/search_level/level1.tscn")
+		elif Global.current_chapter == "chapter_1" and status_dialog == "guide":
+			get_tree().change_scene_to_file("res://src/analisis_level/analisis_utama.tscn")
+		else:
+			get_tree().change_scene_to_file("res://src/search_level/level1.tscn")

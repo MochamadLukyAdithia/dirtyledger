@@ -1,14 +1,35 @@
 {
-	"chapter_1": [
-		{"name": "Narator", "portrait": "", "text": "Jember, Juni 2026. Bisnis waralaba 'Kopi Sejahtera' sedang berkembang sangat pesat di pusat kota..."},
-		{"name": "Narator", "portrait": "", "text": "Namun, dibalik ramainya pengunjung, tim Audit Internal pusat mendeteksi pola anomali yang janggal pada siklus Kas Kecil di cabang utama. Laporan keuangannya terlihat 'berdarah'."},
-		{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Saya Bambang, Auditor Forensik yang ditugaskan untuk menyelidiki kasus ini. Laporan fisik kas dan pencatatan sistem di cabang ini sama sekali tidak sinkron."},
-		{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Admin kasir di sini bekerja terlalu rapi... atau mungkin mereka terlalu pintar dalam menyembunyikan sesuatu dari mata audit."},
-		{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Seorang informan rahasia membisiki saya bahwa ada sebuah Flashdisk berisi pembukuan ganda atau 'Dirty Ledger' yang sengaja disembunyikan di sekitar meja kerja ini."},
-		{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Selain itu, saya juga harus menemukan Kuitansi pembelian aset yang asli. Ada dugaan kuat terjadi mark-up biaya renovasi kafe yang nilainya tidak masuk akal."},
-		{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Dan satu petunjuk terakhir... Laci bawah meja itu terkunci rapat. Saya harus mencari Kunci cadangan untuk melihat dokumen mutasi rekening koran yang disembunyikan."},
-		{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Gunakan ketelitianmu. Jika data fisik dan data digital di sistem tidak cocok, maka korupsi pasti sedang terjadi di sini. Mari kita mulai penyelidikan!"}
-	],
+	"chapter_1": {
+		"intro": [
+			{"name": "Narator", "portrait": "", "text": "Jember, Juni 2026. Bisnis waralaba 'Kopi Sejahtera' sedang berkembang sangat pesat di pusat kota..."},
+			{"name": "Narator", "portrait": "", "text": "Namun, dibalik ramainya pengunjung, tim Audit Internal pusat mendeteksi pola anomali yang janggal pada siklus Kas Kecil di cabang utama. Laporan keuangannya terlihat 'berdarah'."},
+			{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Saya Bambang, Auditor Forensik yang ditugaskan untuk menyelidiki kasus ini. Laporan fisik kas dan pencatatan sistem di cabang ini sama sekali tidak sinkron."},
+			{"name": "Satria (Auditor)", "portrait" : "res://assets/character/bambang/bambang.webp", "text": "Admin kasir di sini bekerja terlalu rapi... atau mungkin mereka terlalu pintar dalam menyembunyikan sesuatu dari mata audit."},
+			{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Seorang informan rahasia membisiki saya bahwa ada sebuah Flashdisk berisi pembukuan ganda atau 'Dirty Ledger' yang sengaja disembunyikan di sekitar meja kerja ini."},
+			{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Selain itu, saya juga harus menemukan Kuitansi pembelian aset yang asli. Ada dugaan kuat terjadi mark-up biaya renovasi kafe yang nilainya tidak masuk akal."},
+			{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Dan satu petunjuk terakhir... Laci bawah meja itu terkunci rapat. Saya harus mencari Kunci cadangan untuk melihat dokumen mutasi rekening koran yang disembunyikan."},
+			{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Gunakan ketelitianmu. Jika data fisik dan data digital di sistem tidak cocok, maka korupsi pasti sedang terjadi di sini. Mari kita mulai penyelidikan!"}
+		],
+		"guide": [
+			{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Bagus sekali, semua bukti fisik di Chapter 1 sudah terkumpul!"},
+			{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Sekarang, mari kita bawa barang-barang ini menuju Halaman Analisis untuk mencocokkan datanya."}
+		],
+		"analysis_intro": [
+			{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Selamat datang di **Meja Analisis Forensik**."},
+			{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Di sini, kita bisa memeriksa lebih dalam terkait bukti-bukti yang sudah kita temukan sebelumnya."},
+			{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Klik tombol analisis pada tiap barang, tunggu prosesnya, lalu lihat fakta hukum tersembunyi yang akan membongkar kedok korupsi mereka!"}
+		],
+		"analysis_outro": [
+			{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Luar biasa! Seluruh bukti digital dan fisik di meja ini sudah selesai kita kuliti sampai akar-akarnya."},
+			{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Semua temuan mengarah pada manipulasi sistem dan penggelapan kas secara masif dan terstruktur."},
+			{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Sekarang, kumpulkan keberanianmu. Mari kita melangkah ke ruang interogasi untuk menentukan siapa **Suspek Utama** di balik kejahatan ini!"}
+		],
+		"suspect_intro": [
+			{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Kita sudah berada di halaman **Daftar Terduga Pelaku (Suspek)**."},
+			{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Di sini kamu bisa meneliti profil detail dari setiap suspek, melihat latar belakang mereka, alibi, hingga kecocokan bukti forensik yang kita punya."},
+			{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Ingat, pilih dengan bijak berdasarkan fakta hukum yang sudah kita temukan. Jangan sampai salah menuduh orang!"}
+		]
+	},
 	"chapter_2": [
 		{"name": "Narator", "portrait": "", "text": "Setelah berhasil mengamankan bukti-bukti awal di laci kasir, Bambang melangkah masuk ke ruang arsip utama di lantai dua..."},
 		{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Bukti kuitansi renovasi kemarin memang palsu, tapi siapa dalang utama yang menandatanganinya? Dokumen otorisasi pasti ada di dalam ruangan ini."},
@@ -26,7 +47,7 @@
 		{"name": "Narator", "portrait": "", "text": "Bambang memeriksa tempat sampah di samping meja sang manajer dan menemukan secarik kertas memo yang dirobek secara tergesa-gesa."},
 		{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Tunggu... Ini adalah instruksi tertulis kepada admin untuk menghapus riwayat transaksi fiktif di server lokal sebelum tim audit pusat datang!"},
 		{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Untung saja mereka terlambat. Data cadangan di flashdisk rahasia yang kita temukan di Chapter 1 adalah bukti hukum pidana yang tidak bisa dibantah."},
-		{"name": "Narator", "portrait": "", "text": "Dengan seluruh berkas pembukuan ganda gila ini di tangan, audit forensik resmi dinyatakan selesai dan siap dilaporkan ke direksi pusat."},
+		{"name": "Narator", "portrait": "", "text": "With seluruh berkas pembukuan ganda gila ini di tangan, audit forensik resmi dinyatakan selesai dan siap dilaporkan ke direksi pusat."},
 		{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Kerja bagus. Kedok bisnis 'Kopi Sejahtera' yang dijadikan alat pencucian uang oleh oknum internal ini akhirnya terbongkar total. Keadilan telah ditegakkan!"}
 	]
 }

@@ -6,7 +6,7 @@ var bisa_diklik: bool = false
 func _ready() -> void:
 	hide()
 	modulate.a = 0
-	scale = Vector2(0.9, 0.9) # Efek pop-up mulai dari agak kecil
+	scale = Vector2(0.9, 0.9)
 
 func muncul() -> void:
 	show()
@@ -18,19 +18,21 @@ func muncul() -> void:
 	await tween.finished
 	bisa_diklik = true
 	
-	# PERBAIKAN: Membuat Label3 di dalam VBoxContainer berkedip loop (terang-redup)
 	var t_blink = create_tween().set_loops()
 	t_blink.tween_property($VBoxContainer/Label3, "modulate:a", 0.3, 0.8)
 	t_blink.tween_property($VBoxContainer/Label3, "modulate:a", 1.0, 0.8)
 
-func _input(event: InputEvent) -> void:
+# === PERBAIKAN DI SINI: Menggunakan _gui_input agar tidak konflik dengan klik di luar panel ===
+func _gui_input(event: InputEvent) -> void:
 	if bisa_diklik and event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			# Accept event agar input klik dihentikan di sini dan tidak tembus ke objek lain
+			accept_event() 
 			lanjutkan()
 
 func lanjutkan() -> void:
 	bisa_diklik = false
 	print("DEBUG: Sinyal berpindah ke Tahap Analisis Bukti dipicu.")
 	
-	# Pemicu perpindahan scene langsung dari panel sukses
-	emit_signal("lanjut_ke_analisis")
+	# === PERBAIKAN DI SINI: Menggunakan format standard Godot 4 ===
+	lanjut_ke_analisis.emit()

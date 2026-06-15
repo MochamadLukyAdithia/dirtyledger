@@ -7,10 +7,9 @@ var database_cerita = {
 	"Kwitansi": "Kwitansi ini palsu. Stempel perusahaannya berbeda dengan stempel asli, dan nominalnya digelembungkan 10x lipat."
 }
 
-# Preload Scene Kecil SlotBukti
 const SLOT_BUKTI = preload("res://src/analisis_level/slot_bukti.tscn")
+const DIALOG_SCENE = preload("res://src/dialogue_level/StoryIntro.tscn")
 
-# Preload Gambar Aset (Pastikan file gambar ini ada di folder project kamu)
 var tex_kunci = preload("res://assets/evidence/kunci.png")
 var tex_fd = preload("res://assets/evidence/flashdisk.png")
 var tex_kwitansi = preload("res://assets/evidence/kwitansi.jpg")
@@ -19,12 +18,24 @@ var tex_kwitansi = preload("res://assets/evidence/kwitansi.jpg")
 @onready var story_panel = $CanvasLayer/story_panel
 @onready var story_label = $CanvasLayer/story_panel/story_label
 
+var daftar_slot_di_meja: Array = []
+
+# Array baru untuk mencatat barang apa saja yang SUDAH selesai diproses analisisnya
+var barang_sudah_analisis: Array[String] = []
+
 func _ready() -> void:
 	story_panel.hide()
 	input_bukti_ke_meja()
+	
+	if Global.current_chapter == "chapter_1":
+		print("DEBUG ANALISIS: Chapter 1 Pakai Dialog Intro. Mengunci slot tombol.")
+		set_semua_tombol_slot_aktif(false)
+		munculkan_dialog_overlay("analysis_intro")
+	else:
+		print("DEBUG ANALISIS: Chapter Non-1 Aktif. Slot langsung dibuka.")
+		set_semua_tombol_slot_aktif(true)
 
 func input_bukti_ke_meja():
-	# Ambil data dinamis dari Global script
 	var bukti_pemain = Global.bukti_ditemukan
 	
 	for nama in bukti_pemain:
@@ -34,9 +45,10 @@ func input_bukti_ke_meja():
 		var texture_barang = dapatkan_texture(nama)
 		slot_baru.set_bukti(nama, texture_barang)
 		
-		# Hubungkan interaksi tombol di dalam slot lewat kode
 		slot_baru.analisis_selesai.connect(_on_barang_selesai_dianalisis)
 		slot_baru.btn_analisis.pressed.connect(func(): _on_slot_klik(slot_baru))
+		
+		daftar_slot_di_meja.append(slot_baru)
 
 func dapatkan_texture(nama: String) -> Texture2D:
 	match nama:
@@ -46,26 +58,52 @@ func dapatkan_texture(nama: String) -> Texture2D:
 	return null
 
 func _on_slot_klik(slot):
-	# Jika belum dianalisis sama sekali
 	if not slot.sedang_analisis and not slot.sudah_selesai:
 		slot.mulai_proses_analisis()
-	# Jika statusnya sudah selesai dianalisis (Tombol teksnya "Lihat Hasil")
 	elif slot.sudah_selesai:
 		tampilkan_cerita(slot.nama_item)
 
 func _on_barang_selesai_dianalisis(nama_barang):
 	print("Notifikasi Sistem: Analisis selesai untuk objek -> " + nama_barang)
+	
+	# Masukkan nama barang ke list pelacak jika belum ada
+	if not barang_sudah_analisis.has(nama_barang):
+		barang_sudah_analisis.append(nama_barang)
+		
+	# CEK KONDISI JIKA SEMUA BARANG DI MEJA SUDAH SELESAI DIANALISIS
+	if barang_sudah_analisis.size() == Global.bukti_ditemukan.size():
+		print("DEBUG ANALISIS: Semua barang sukses dianalisis! Memicu Analysis Outro...")
+		# Beri sedikit waktu delay agar pop-up cerita penutup barang selesai dibaca dulu (opsional)
+		await get_tree().create_timer(0.5).timeout
+		munculkan_dialog_overlay("analysis_outro")
 
 func tampilkan_cerita(nama_barang):
 	if database_cerita.has(nama_barang):
-		story_label.text = "[b]HASIL ANALISIS " + nama_barang.to_upper() + ":[/b]\n\n" + database_cerita[nama_barang]
+		story_label.text = "HASIL ANALISIS " + nama_barang.to_upper() + ":\n\n" + database_cerita[nama_barang]
 		story_panel.show()
 
 func _on_close_button_pressed():
 	story_panel.hide()
 
 func _on_back_button_pressed():
-	# JANGAN pakai change_scene_to_file agar timer tidak hancur. Cukup sembunyikan UI ini.
 	get_tree().change_scene_to_file("res://src/ui/main_lobby/main_lobby.tscn")
-	# Panggil/Munculkan scene lobby kamu yang berada di luar tree ini, misal:
-	 #get_node("../Lobby").show()
+
+# === MENGEMBANGKAN MODAL OVERLAY MENJADI DINAMIS ===
+func munculkan_dialog_overlay(status_key: String) -> void:
+	var dialog_instance = DIALOG_SCENE.instantiate()
+	add_child(dialog_instance)
+	
+	# Mengirimkan status secara fleksibel (bisa "analysis_intro" atau "analysis_outro")
+	dialog_instance.init_dialog(status_key)
+	
+	if status_key == "analysis_intro":
+		dialog_instance.dialog_selesai.connect(_on_dialog_intro_selesai)
+
+func _on_dialog_intro_selesai() -> void:
+	print("DEBUG ANALISIS: Dialog intro selesai! Membuka interaksi tombol slot.")
+	set_semua_tombol_slot_aktif(true)
+
+func set_semua_tombol_slot_aktif(status: bool) -> void:
+	for slot in daftar_slot_di_meja:
+		if slot and slot.get("btn_analisis"):
+			slot.btn_analisis.disabled = !status
