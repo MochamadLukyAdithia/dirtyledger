@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://c14m7g63xd1ym"]
+
+[ext_resource type="Script" uid="uid://ckinkqkkihnjt" path="res://src/suspect_level/interogasi_utama.gd" id="1_i8hxj"]
+
+[node name="interogasi_utama" type="Control" unique_id=704417167]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i8hxj")
+
+[node name="background" type="TextureRect" parent="." unique_id=640486163]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+expand_mode = 1
+stretch_mode = 6
+
+[node name="title_label" type="Label" parent="." unique_id=53167863]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 36.0
+offset_right = 853.0
+offset_bottom = 78.0
+text = "Pilih Dalang utama"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="suspect_container" type="HBoxContainer" parent="." unique_id=1014201191]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 193.0
+offset_right = 1046.0
+offset_bottom = 464.0
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="canvas_layer_ui" type="CanvasLayer" parent="." unique_id=2039246885]
+
+[node name="detail_panel" type="Panel" parent="canvas_layer_ui" unique_id=845468867]
+visible = false
+offset_left = 122.0
+offset_top = 179.0
+offset_right = 1056.0
+offset_bottom = 544.0
+
+[node name="text_penjelasan" type="RichTextLabel" parent="canvas_layer_ui/detail_panel" unique_id=2017300415]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 44.0
+offset_right = 891.0
+offset_bottom = 322.0
+
+[node name="btn_tuduh" type="Button" parent="canvas_layer_ui/detail_panel" unique_id=546149018]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 287.0
+offset_right = 226.0
+offset_bottom = 340.0
+
+[node name="true_ending_panel" type="ColorRect" parent="canvas_layer_ui" unique_id=770005100]
+visible = false
+offset_left = 54.0
+offset_top = 54.0
+offset_right = 1092.0
+offset_bottom = 610.0
+
+[node name="news_header" type="ColorRect" parent="canvas_layer_ui/true_ending_panel" unique_id=1898523135]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 73.0
+offset_right = 923.0
+offset_bottom = 487.0
+color = Color(0.15775332, 0.15775332, 0.15775332, 1)
+
+[node name="news_label" type="RichTextLabel" parent="canvas_layer_ui/true_ending_panel" unique_id=667487230]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 96.0
+offset_right = 902.0
+offset_bottom = 483.0
+
+[connection signal="pressed" from="canvas_layer_ui/detail_panel/btn_tuduh" to="." method="_on_btn_tuduh_pressed"]
