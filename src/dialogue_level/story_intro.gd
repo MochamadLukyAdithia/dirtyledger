@@ -100,12 +100,20 @@ func handle_dialogue_end_routing():
 	if status_dialog == "analysis_intro":
 		print("DEBUG DIALOG ROUTING: Selesai Analysis Intro -> Menghapus Overlay Dialog.")
 		queue_free()
+		
 	elif status_dialog == "analysis_outro":
-		print("DEBUG DIALOG ROUTING: Selesai Analysis Outro -> Pindah ke Scene Suspek.")
-		get_tree().change_scene_to_file("res://src/suspect_level/pemilihan_suspek.tscn")
+		print("DEBUG DIALOG ROUTING: Selesai Analysis Outro -> Pindah ke Scene Suspek dengan Status Intro.")
+		# Set status global ke suspect_intro sebelum pindah scene
+		Global.current_dialog_status = "suspect_intro"
+		get_tree().change_scene_to_file("res://src/suspect_level/interogasi_utama.tscn")
+		
 	elif status_dialog == "suspect_intro":
-		print("DEBUG DIALOG ROUTING: Selesai Suspect Intro -> Bebas memilih suspek.")
-		queue_free()
+		print("DEBUG DIALOG ROUTING: Selesai Suspect Intro -> Masuk ke Interogasi Utama (Pilih Suspek).")
+		# Emit sinyal custom atau panggil fungsi di parent/scene utama untuk mengaktifkan interogasi
+		if get_parent().has_method("mulai_interogasi_utama"):
+			get_parent().mulai_interogasi_utama()
+		queue_free() # Hapus overlay dialog agar pemain bisa klik kartu suspek
+		
 	else:
 		if Global.current_chapter == "chapter_1" and status_dialog == "intro":
 			get_tree().change_scene_to_file("res://src/search_level/level1.tscn")
