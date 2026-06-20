@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://cfd34ekpkf2vx"]
 
 [ext_resource type="Script" uid="uid://cldt0vju5wc3k" path="res://src/ui/ui_misi_sukses/mission_success_panel.gd" id="1_3l2h7"]
-[ext_resource type="FontFile" uid="uid://cnl4jim3r54ss" path="res://assets/Font/Kenney Future Narrow.ttf" id="1_orv5d"]
+[ext_resource type="FontFile" uid="uid://42mqva7rmwt4" path="res://assets/Font/Vanilla Whale.otf" id="2_eukt8"]
+[ext_resource type="FontFile" uid="uid://bpbm64a16op7q" path="res://assets/Font/Kenney Future.ttf" id="3_8vlvd"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=231319626]
 
@@ -33,7 +34,8 @@ alignment = 1
 [node name="Label" type="Label" parent="MissionSuccessPanel/VBoxContainer" unique_id=646250354]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.44705883, 1, 1)
-theme_override_fonts/font = ExtResource("1_orv5d")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_eukt8")
 theme_override_font_sizes/font_size = 70
 text = "MISI SUKSES"
 horizontal_alignment = 1
@@ -41,5 +43,6 @@ vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="MissionSuccessPanel/VBoxContainer" unique_id=301102186]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_8vlvd")
 text = "Klik untuk lanjut..."
 horizontal_alignment = 1

@@ -52,9 +52,9 @@ grow_vertical = 1
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=473968306]
 layout_mode = 0
-offset_left = 487.0
+offset_left = 468.0
 offset_top = 413.0
-offset_right = 645.0
+offset_right = 701.0
 offset_bottom = 460.0
 texture_normal = ExtResource("3_dy7ct")
 texture_pressed = ExtResource("4_0o4t1")
@@ -81,10 +81,10 @@ text = "Google"
 
 [node name="TextureButton5" type="TextureButton" parent="." unique_id=479461022]
 layout_mode = 0
-offset_left = 487.0
-offset_top = 502.0
-offset_right = 645.0
-offset_bottom = 549.0
+offset_left = 468.0
+offset_top = 483.0
+offset_right = 703.0
+offset_bottom = 530.0
 texture_normal = ExtResource("3_dy7ct")
 texture_pressed = ExtResource("4_0o4t1")
 texture_hover = ExtResource("5_0k4wn")

@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://mbfp86w6u3wj"]
 
 [ext_resource type="Script" uid="uid://djuhy2we6l7up" path="res://src/analisis_level/slot_bukti.gd" id="1_68uxc"]
+[ext_resource type="FontFile" uid="uid://bpbm64a16op7q" path="res://assets/Font/Kenney Future.ttf" id="2_drt2d"]
+[ext_resource type="Texture2D" uid="uid://f8qg4bp0ra2q" path="res://assets/Blue/button_rectangle_gradient.svg" id="3_6mt2c"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6mt2c"]
 
@@ -27,14 +29,26 @@ offset_left = 26.0
 offset_top = 15.0
 offset_right = 260.0
 offset_bottom = 61.0
+theme_override_fonts/font = ExtResource("2_drt2d")
 horizontal_alignment = 1
 
-[node name="button_analisis" type="Button" parent="." unique_id=237657384]
+[node name="button_analisis" type="TextureButton" parent="." unique_id=1171063229]
 layout_mode = 0
-offset_left = 88.0
-offset_top = 321.0
-offset_right = 178.0
-offset_bottom = 352.0
+offset_left = 62.0
+offset_top = 322.0
+offset_right = 199.0
+offset_bottom = 367.0
+texture_normal = ExtResource("3_6mt2c")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="button_analisis" unique_id=1430487095]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 13.0
+offset_right = 117.0
+offset_bottom = 36.0
+theme_override_fonts/font = ExtResource("2_drt2d")
 text = "Analisis"
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=2088274244]
@@ -43,6 +57,7 @@ offset_left = 36.0
 offset_top = 271.0
 offset_right = 225.0
 offset_bottom = 298.0
+theme_override_fonts/font = ExtResource("2_drt2d")
 
 [node name="Timer" type="Timer" parent="." unique_id=1072991275]
 one_shot = true

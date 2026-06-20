@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://c14m7g63xd1ym"]
 
 [ext_resource type="Script" uid="uid://ckinkqkkihnjt" path="res://src/suspect_level/interogasi_utama.gd" id="1_i8hxj"]
+[ext_resource type="Texture2D" uid="uid://bc7ueikbdtfcv" path="res://assets/bg_level/bg_main_menu3.png" id="2_cvoxa"]
+[ext_resource type="FontFile" uid="uid://bpbm64a16op7q" path="res://assets/Font/Kenney Future.ttf" id="2_gy3rq"]
 
 [node name="interogasi_utama" type="Control" unique_id=704417167]
 layout_mode = 3
@@ -15,6 +17,7 @@ script = ExtResource("1_i8hxj")
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
+texture = ExtResource("2_cvoxa")
 expand_mode = 1
 stretch_mode = 6
 
@@ -24,6 +27,8 @@ offset_left = 269.0
 offset_top = 36.0
 offset_right = 853.0
 offset_bottom = 78.0
+theme_override_fonts/font = ExtResource("2_gy3rq")
+theme_override_font_sizes/font_size = 40
 text = "Pilih Dalang utama"
 horizontal_alignment = 1
 vertical_alignment = 1

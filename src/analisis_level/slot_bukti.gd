@@ -5,6 +5,7 @@ signal analisis_selesai(nama_barang)
 @onready var texture_rect = $TextureRect
 @onready var label_nama = $Label
 @onready var btn_analisis = $button_analisis
+@onready var btn_analisis_label = $button_analisis/Label
 @onready var progress_bar = $ProgressBar
 @onready var timer = $Timer
 
@@ -38,5 +39,5 @@ func _on_timer_timeout():
 	sudah_selesai = true
 	progress_bar.hide()
 	btn_analisis.disabled = false
-	btn_analisis.text = "Lihat Hasil"
+	btn_analisis_label = "Lihat Hasil"
 	analisis_selesai.emit(nama_item)
