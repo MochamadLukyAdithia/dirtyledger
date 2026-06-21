@@ -25,6 +25,7 @@ TransitionManager="*uid://ci5yoiwo0ebm3"
 EnergyManager="*uid://c2okc0b0rkaw1"
 GoogleAuth="*uid://dysd4cnbj02r5"
 Global="*uid://c424yn8562mwf"
+BgmManager="*uid://bhknr1h22x6ed"
 
 [display]
 

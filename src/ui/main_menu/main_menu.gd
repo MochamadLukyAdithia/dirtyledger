@@ -5,6 +5,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	BgmManager.putar_suasana("res://assets/bgm/bgm_mainmenu.mp3")
 	main_buttons.visible = true
 	options.visible = false
 	$Options.menu_ditutup.connect(_on_options_balik_ke_menu)

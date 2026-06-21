@@ -1,20 +1,27 @@
 [gd_scene format=3 uid="uid://dlrf2j48a5ghc"]
 
 [ext_resource type="Script" uid="uid://bqt0ialwy32lw" path="res://src/dialogue_level/story_intro.gd" id="1_0qx3q"]
-[ext_resource type="Texture2D" uid="uid://d4hubqvm4xujw" path="res://Generated Image March 28, 2026 - 12_26AM.png" id="1_056wk"]
-[ext_resource type="Texture2D" uid="uid://dyweq7o87hfe7" path="res://assets/character/bambang/bambang3.webp" id="2_nh5m7"]
+[ext_resource type="Texture2D" uid="uid://c7okgfs1umutc" path="res://assets/Blue/dialog_box.png" id="2_0i0wf"]
 [ext_resource type="Texture2D" uid="uid://f8qg4bp0ra2q" path="res://assets/Blue/button_rectangle_gradient.svg" id="4_dj10a"]
 [ext_resource type="FontFile" uid="uid://bpbm64a16op7q" path="res://assets/Font/Kenney Future.ttf" id="4_lomr7"]
 [ext_resource type="Texture2D" uid="uid://bw1e4hve77q3m" path="res://assets/Blue/button_rectangle_gloss.svg" id="5_y8hmy"]
 [ext_resource type="PackedScene" uid="uid://b7ydyp3bkypgl" path="res://src/ui/ui_pause/PauseMenu.tscn" id="6_7ve2n"]
 [ext_resource type="Texture2D" uid="uid://bepto6olt2e41" path="res://assets/Blue/button_rectangle_flat.svg" id="6_46iic"]
 [ext_resource type="FontFile" uid="uid://42mqva7rmwt4" path="res://assets/Font/Vanilla Whale.otf" id="8_0i0wf"]
+[ext_resource type="FontFile" uid="uid://okeghkuq83oo" path="res://assets/Font/BarlowSemiCondensed-Medium.ttf" id="8_v2keh"]
+[ext_resource type="FontFile" uid="uid://di78n5lylnt7y" path="res://assets/Font/BarlowSemiCondensed-Bold.ttf" id="9_8s520"]
+[ext_resource type="FontFile" uid="uid://c7klvkg7di5ji" path="res://assets/Font/BarlowSemiCondensed-BoldItalic.ttf" id="10_oxh4t"]
+[ext_resource type="FontFile" uid="uid://dq7h6ukm32tmk" path="res://assets/Font/BarlowSemiCondensed-MediumItalic.ttf" id="11_tbi85"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h8pml"]
+texture = ExtResource("2_0i0wf")
 
 [node name="Control" type="Control" unique_id=2094750361]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0qx3q")
@@ -24,21 +31,19 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -188.0
-offset_bottom = 188.0
+offset_top = 2.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_056wk")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="CharPortrait" type="TextureRect" parent="." unique_id=1574276337]
 layout_mode = 0
-offset_left = 61.0
-offset_top = 39.0
-offset_right = 352.0
-offset_bottom = 901.0
+offset_left = 66.0
+offset_top = 25.0
+offset_right = 357.0
+offset_bottom = 887.0
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("2_nh5m7")
 flip_h = true
 
 [node name="DialoguePanel" type="Panel" parent="." unique_id=1476197029]
@@ -46,13 +51,14 @@ layout_mode = 0
 offset_top = 368.0
 offset_right = 1151.0
 offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_h8pml")
 
 [node name="NextButton" type="TextureButton" parent="DialoguePanel" unique_id=2110045813]
 layout_mode = 0
-offset_left = 1001.0
-offset_top = 232.0
-offset_right = 1121.0
-offset_bottom = 267.0
+offset_left = 1000.0
+offset_top = 228.0
+offset_right = 1120.0
+offset_bottom = 263.0
 texture_normal = ExtResource("4_dj10a")
 texture_pressed = ExtResource("5_y8hmy")
 texture_hover = ExtResource("6_46iic")
@@ -70,10 +76,10 @@ text = "Next"
 
 [node name="CharName" type="Label" parent="DialoguePanel" unique_id=842773604]
 layout_mode = 0
-offset_left = 44.0
-offset_top = 16.0
-offset_right = 195.0
-offset_bottom = 77.0
+offset_left = 55.0
+offset_top = 14.0
+offset_right = 206.0
+offset_bottom = 75.0
 theme_override_fonts/font = ExtResource("8_0i0wf")
 theme_override_font_sizes/font_size = 50
 text = "Bambang"
@@ -87,13 +93,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -527.5
-offset_top = -52.0
-offset_right = 540.5
-offset_bottom = 100.0
+offset_left = -518.5
+offset_top = -59.0
+offset_right = 549.5
+offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 20
+theme_override_fonts/normal_font = ExtResource("8_v2keh")
+theme_override_fonts/bold_font = ExtResource("9_8s520")
+theme_override_fonts/bold_italics_font = ExtResource("10_oxh4t")
+theme_override_fonts/italics_font = ExtResource("11_tbi85")
+theme_override_font_sizes/normal_font_size = 30
+text = "Menurut laporan awal, CFO sempat mempertanyakan beberapa angka dalam laporan keuangan sebelum mengundurkan diri."
 
 [node name="CanvasLayer" parent="." unique_id=1020807030 instance=ExtResource("6_7ve2n")]
 visible = false

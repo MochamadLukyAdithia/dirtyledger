@@ -6,6 +6,7 @@ extends Control
 @onready var timer_label: Label = $Panel3/HeaderUI/TimerLabel
 
 func _ready() -> void:
+	BgmManager.putar_suasana("res://assets/bgm/bgm_lobby.mp3")
 	pass
 
 func _process(_delta: float) -> void:

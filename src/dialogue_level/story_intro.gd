@@ -88,6 +88,8 @@ func update_dialogue():
 			portrait_node.show()
 		else:
 			portrait_node.hide()
+		if data.has("bgm"):
+			BgmManager.putar_suasana(data.get("bgm"))
 	else:
 		handle_dialogue_end_routing()
 

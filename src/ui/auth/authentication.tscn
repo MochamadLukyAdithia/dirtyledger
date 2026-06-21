@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://ddcwsqtbav4ik" path="res://assets/bg_level/bg_main_menu2.png" id="2_dy7ct"]
 [ext_resource type="Texture2D" uid="uid://ceb3ot1387hw7" path="res://assets/Blue/button_rectangle_depth_flat.svg" id="3_dy7ct"]
 [ext_resource type="Texture2D" uid="uid://byfa0pvwe7vm5" path="res://assets/Blue/button_rectangle_depth_gloss.svg" id="4_0o4t1"]
-[ext_resource type="AudioStream" uid="uid://blstyr8l04vd0" path="res://assets/bgm/Lobby - Library of Ruina OST - (320 Kbps).mp3" id="4_jix8l"]
 [ext_resource type="Texture2D" uid="uid://dknya0j08q12y" path="res://assets/Blue/button_rectangle_depth_gradient.svg" id="5_0k4wn"]
 [ext_resource type="FontFile" uid="uid://bpbm64a16op7q" path="res://assets/Font/Kenney Future.ttf" id="6_0o4t1"]
 [ext_resource type="PackedScene" uid="uid://b3qkn756qjr1f" path="res://src/ui/ui_options/OptionMenu.tscn" id="9_dy7ct"]
@@ -29,11 +28,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_0mb6e")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=913504878]
-stream = ExtResource("4_jix8l")
-autoplay = true
-bus = &"Music"
 
 [node name="Options" parent="." unique_id=1142443925 instance=ExtResource("9_dy7ct")]
 visible = false

@@ -1,9 +1,10 @@
 {
 	"chapter_1": {
 		"intro": [
-			{"name": "Narator", "portrait": "", "text": "Jember, Juni 2026. Bisnis waralaba 'Kopi Sejahtera' sedang berkembang sangat pesat di pusat kota..."},
-			{"name": "Narator", "portrait": "", "text": "Namun, dibalik ramainya pengunjung, tim Audit Internal pusat mendeteksi pola anomali yang janggal pada siklus Kas Kecil di cabang utama. Laporan keuangannya terlihat 'berdarah'."},
-			{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Saya Bambang, Auditor Forensik yang ditugaskan untuk menyelidiki kasus ini. Laporan fisik kas dan pencatatan sistem di cabang ini sama sekali tidak sinkron."},
+			{"name": "Narator", "portrait": "", "text": "Mahartha, 15 Maret 2032. PT Surya Dynamics sedang bersiap mempublikasikan laporan keuangan tahunannya. Di mata publik, perusahaan ini terlihat sehat dan terus bertumbuh.", "bgm": "res://assets/bgm/bgm_dialog1.mp3"},
+			{"name": "Narator", "portrait": "", "text": "Namun tiga hari sebelum laporan dipublikasikan, Audit Internal menemukan perbedaan angka laba bersih senilai ₳25 juta antara dua versi laporan yang berbeda."},
+			{"name": "Narator", "portrait": "", "text": "Pada hari yang sama, Chief Financial Officer perusahaan, Aditya Pramana, mengundurkan diri secara mendadak tanpa memberikan penjelasan kepada publik."},
+			{"name": "Arka (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Saya Arka Pratama, auditor forensik dari Financial Integrity Bureau. Tugas pertama saya adalah mencari tahu apa yang sebenarnya terjadi di balik selisih ₳25 juta tersebut."},
 			{"name": "Satria (Auditor)", "portrait" : "res://assets/character/bambang/bambang.webp", "text": "Admin kasir di sini bekerja terlalu rapi... atau mungkin mereka terlalu pintar dalam menyembunyikan sesuatu dari mata audit."},
 			{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Seorang informan rahasia membisiki saya bahwa ada sebuah Flashdisk berisi pembukuan ganda atau 'Dirty Ledger' yang sengaja disembunyikan di sekitar meja kerja ini."},
 			{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Selain itu, saya juga harus menemukan Kuitansi pembelian aset yang asli. Ada dugaan kuat terjadi mark-up biaya renovasi kafe yang nilainya tidak masuk akal."},

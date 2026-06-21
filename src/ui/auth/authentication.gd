@@ -6,6 +6,7 @@ extends Control
 
 func _ready() -> void:
 	# Tunggu sinyal sukses dari sistem GoogleAuth
+	BgmManager.putar_suasana("res://assets/bgm/bgm_mainmenu.mp3")
 	GoogleAuth.token_received.connect(_on_google_login_success)
 
 func _on_guest_button_pressed() -> void:

@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://byfa0pvwe7vm5" path="res://assets/Blue/button_rectangle_depth_gloss.svg" id="4_utof7"]
 [ext_resource type="Texture2D" uid="uid://dknya0j08q12y" path="res://assets/Blue/button_rectangle_depth_gradient.svg" id="5_5rq32"]
 [ext_resource type="FontFile" uid="uid://bpbm64a16op7q" path="res://assets/Font/Kenney Future.ttf" id="6_rd1ra"]
-[ext_resource type="AudioStream" uid="uid://blstyr8l04vd0" path="res://assets/bgm/Lobby - Library of Ruina OST - (320 Kbps).mp3" id="8_bf612"]
 [ext_resource type="PackedScene" uid="uid://b3qkn756qjr1f" path="res://src/ui/ui_options/OptionMenu.tscn" id="9_vexca"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2rik1"]
@@ -116,11 +115,6 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("6_rd1ra")
 theme_override_font_sizes/font_size = 30
 text = "Exit"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=485531462]
-stream = ExtResource("8_bf612")
-autoplay = true
-bus = &"Music"
 
 [node name="Options" parent="." unique_id=1142443925 instance=ExtResource("9_vexca")]
 visible = false
