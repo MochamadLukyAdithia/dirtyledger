@@ -8,6 +8,8 @@ const SAVE_PATH = "user://energy_data.save"
 var current_energy: int = MAX_ENERGY
 var next_regen_time: float = 0.0 # Timestamp kapan energi berikutnya bertambah
 
+var next_level_path: String = ""
+
 func _ready() -> void:
 	load_energy_data()
 	recalculate_offline_energy()

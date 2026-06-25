@@ -1,0 +1,447 @@
+[gd_scene format=3 uid="uid://bggc8yxr4a1kh"]
+
+[ext_resource type="Texture2D" uid="uid://dbfsy6ipriosg" path="res://assets/bg_level/bg_peta.png" id="1_7c2k1"]
+[ext_resource type="Texture2D" uid="uid://caopva7ne2d8m" path="res://assets/bg_level/bg_analisis.png" id="1_dqhbl"]
+[ext_resource type="Script" uid="uid://lvdfukq5nqju" path="res://src/ui/main_lobby/map_camera.gd" id="2_dqhbl"]
+[ext_resource type="Script" uid="uid://dsgi6dws33cyf" path="res://src/ui/main_lobby/main_lobby2.gd" id="2_u7pjy"]
+[ext_resource type="Texture2D" uid="uid://bepto6olt2e41" path="res://assets/Blue/button_rectangle_flat.svg" id="4_0hk7r"]
+[ext_resource type="Texture2D" uid="uid://dbwfl3l7mag5a" path="res://assets/ui_lobby/topbar_ui.png" id="5_fsscp"]
+[ext_resource type="FontFile" uid="uid://okeghkuq83oo" path="res://assets/Font/BarlowSemiCondensed-Medium.ttf" id="6_oiuf5"]
+[ext_resource type="FontFile" uid="uid://dq7h6ukm32tmk" path="res://assets/Font/BarlowSemiCondensed-MediumItalic.ttf" id="7_20d7f"]
+[ext_resource type="Texture2D" uid="uid://df4tr7tf1l522" path="res://assets/ui_lobby/bottom_bar.png" id="8_feu3s"]
+[ext_resource type="Texture2D" uid="uid://dugdyuxjde8ws" path="res://assets/button_home/laboratory/Lab.png" id="9_spfyb"]
+[ext_resource type="PackedScene" uid="uid://d0n2g5sykcne8" path="res://src/ui/main_lobby/level_popup/level_popup.tscn" id="10_spfyb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oiuf5"]
+texture = ExtResource("5_fsscp")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fsscp"]
+bg_color = Color(0.44051376, 0.448305, 0.42775816, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_20d7f"]
+bg_color = Color(0.03876, 0.11774104, 0.94337994, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.24705882, 0.24705882, 0.24705882, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oiuf5"]
+bg_color = Color(0.34682354, 0.60635036, 0.15550506, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2469503, 0.24695027, 0.24695036, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kgtpw"]
+bg_color = Color(0.71387357, 0.7655037, 0.012920001, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.24705882, 0.24705882, 0.24705882, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0hqja"]
+texture = ExtResource("8_feu3s")
+
+[node name="LobbyMain" type="Node2D" unique_id=90992784]
+script = ExtResource("2_u7pjy")
+
+[node name="MapContainer" type="Node2D" parent="." unique_id=1704648301]
+
+[node name="PetaKota" type="Sprite2D" parent="MapContainer" unique_id=648990283]
+texture = ExtResource("1_7c2k1")
+
+[node name="MapCamera" type="Camera2D" parent="MapContainer" unique_id=676645692]
+script = ExtResource("2_dqhbl")
+
+[node name="Level1Button" type="TextureButton" parent="MapContainer" unique_id=828494380]
+offset_left = -477.0
+offset_top = 22.0
+offset_right = -438.0
+offset_bottom = 58.0
+texture_normal = ExtResource("4_0hk7r")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Level1Button2" type="TextureButton" parent="MapContainer" unique_id=1585197393]
+offset_left = -308.0
+offset_top = 63.0
+offset_right = -269.0
+offset_bottom = 99.0
+texture_normal = ExtResource("4_0hk7r")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Level1Button3" type="TextureButton" parent="MapContainer" unique_id=1014671262]
+offset_left = -320.0
+offset_top = 189.0
+offset_right = -281.0
+offset_bottom = 225.0
+texture_normal = ExtResource("4_0hk7r")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Level1Button4" type="TextureButton" parent="MapContainer" unique_id=189811255]
+offset_left = -418.0
+offset_top = -145.0
+offset_right = -379.0
+offset_bottom = -109.0
+texture_normal = ExtResource("4_0hk7r")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Level1Button5" type="TextureButton" parent="MapContainer" unique_id=839553187]
+offset_left = -182.0
+offset_top = 266.0
+offset_right = -143.0
+offset_bottom = 302.0
+texture_normal = ExtResource("4_0hk7r")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Level1Button6" type="TextureButton" parent="MapContainer" unique_id=1363635202]
+offset_left = -152.0
+offset_top = 85.0
+offset_right = -113.0
+offset_bottom = 121.0
+texture_normal = ExtResource("4_0hk7r")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1249133314]
+
+[node name="TopBar" type="PanelContainer" parent="UILayer" unique_id=1505358456]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 55.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oiuf5")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UILayer/TopBar" unique_id=90522089]
+custom_minimum_size = Vector2(1100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 2
+
+[node name="XpBar" type="ProgressBar" parent="UILayer/TopBar/HBoxContainer" unique_id=203548545]
+custom_minimum_size = Vector2(310, 35)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_fsscp")
+theme_override_styles/fill = SubResource("StyleBoxFlat_20d7f")
+max_value = 500.0
+value = 250.0
+fill_mode = 1
+show_percentage = false
+
+[node name="XpLabel" type="Label" parent="UILayer/TopBar/HBoxContainer/XpBar" unique_id=1222488769]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -15.0
+offset_right = -19.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.012473324, 0.03786262, 0.21734512, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("6_oiuf5")
+theme_override_font_sizes/font_size = 25
+text = "100"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="EnergyBar" type="ProgressBar" parent="UILayer/TopBar/HBoxContainer" unique_id=1210963475]
+custom_minimum_size = Vector2(310, 35)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_fsscp")
+theme_override_styles/fill = SubResource("StyleBoxFlat_oiuf5")
+min_value = 100.0
+value = 100.0
+fill_mode = 1
+show_percentage = false
+
+[node name="EnergyLabel" type="Label" parent="UILayer/TopBar/HBoxContainer/EnergyBar" unique_id=1536957472]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -15.0
+offset_right = -20.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.330561, 9.62615e-08, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("6_oiuf5")
+theme_override_font_sizes/font_size = 25
+text = "100"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TimerLabel" type="Label" parent="UILayer/TopBar/HBoxContainer/EnergyBar" unique_id=1284804888]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 0
+offset_left = 17.0
+offset_top = 9.0
+offset_right = 90.0
+offset_bottom = 26.0
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0.32941177, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("7_20d7f")
+theme_override_font_sizes/font_size = 14
+text = "Refill in 05.00"
+horizontal_alignment = 1
+
+[node name="CoinBar" type="Panel" parent="UILayer/TopBar/HBoxContainer" unique_id=1392449010]
+custom_minimum_size = Vector2(310, 35)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kgtpw")
+
+[node name="CoinLabel" type="Label" parent="UILayer/TopBar/HBoxContainer/CoinBar" unique_id=1873561702]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -15.0
+offset_right = -21.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.9556443, 0.4270675, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("6_oiuf5")
+theme_override_font_sizes/font_size = 25
+text = "15.000"
+horizontal_alignment = 2
+
+[node name="BottomMenu" type="PanelContainer" parent="UILayer" unique_id=802837103]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -317.25
+offset_top = -63.0
+offset_right = 317.25
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_0hqja")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UILayer" unique_id=1930655071]
+offset_left = 258.75
+offset_top = 557.0
+offset_right = 893.25
+offset_bottom = 627.0
+size_flags_horizontal = 4
+theme_override_constants/separation = 13
+alignment = 1
+
+[node name="Control" type="Control" parent="UILayer/HBoxContainer" unique_id=1184426119]
+custom_minimum_size = Vector2(90, 70)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="UILayer/HBoxContainer/Control" unique_id=1831234430]
+modulate = Color(0, 0, 0, 0.3)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_spfyb")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="LeaderboardButton" type="TextureButton" parent="UILayer/HBoxContainer/Control" unique_id=1685755664]
+custom_minimum_size = Vector2(90, 70)
+layout_mode = 0
+offset_left = 0.25
+offset_top = -4.0
+offset_right = 90.25
+offset_bottom = 66.0
+texture_normal = ExtResource("9_spfyb")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Control2" type="Control" parent="UILayer/HBoxContainer" unique_id=762742703]
+custom_minimum_size = Vector2(90, 70)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="UILayer/HBoxContainer/Control2" unique_id=6391327]
+modulate = Color(0, 0, 0, 0.3)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_spfyb")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="LaboratoryButton" type="TextureButton" parent="UILayer/HBoxContainer/Control2" unique_id=176494964]
+custom_minimum_size = Vector2(90, 70)
+layout_mode = 0
+offset_left = 0.25
+offset_top = -4.0
+offset_right = 90.25
+offset_bottom = 66.0
+texture_normal = ExtResource("9_spfyb")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Control3" type="Control" parent="UILayer/HBoxContainer" unique_id=874303184]
+custom_minimum_size = Vector2(90, 70)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="UILayer/HBoxContainer/Control3" unique_id=1696951742]
+modulate = Color(0, 0, 0, 0.3)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_spfyb")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="SettingsButton" type="TextureButton" parent="UILayer/HBoxContainer/Control3" unique_id=446616162]
+custom_minimum_size = Vector2(90, 70)
+layout_mode = 0
+offset_left = 0.25
+offset_top = -4.0
+offset_right = 90.25
+offset_bottom = 66.0
+texture_normal = ExtResource("9_spfyb")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Control4" type="Control" parent="UILayer/HBoxContainer" unique_id=1704887484]
+custom_minimum_size = Vector2(90, 70)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="UILayer/HBoxContainer/Control4" unique_id=2103741502]
+modulate = Color(0, 0, 0, 0.3)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_spfyb")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="SuspectButton" type="TextureButton" parent="UILayer/HBoxContainer/Control4" unique_id=176634046]
+custom_minimum_size = Vector2(90, 70)
+layout_mode = 0
+offset_left = 0.25
+offset_top = -4.0
+offset_right = 90.25
+offset_bottom = 66.0
+texture_normal = ExtResource("9_spfyb")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Control5" type="Control" parent="UILayer/HBoxContainer" unique_id=1140316980]
+custom_minimum_size = Vector2(90, 70)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="UILayer/HBoxContainer/Control5" unique_id=1777524155]
+modulate = Color(0, 0, 0, 0.3)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_spfyb")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ExitButton" type="TextureButton" parent="UILayer/HBoxContainer/Control5" unique_id=1096279633]
+custom_minimum_size = Vector2(90, 70)
+layout_mode = 0
+offset_left = 0.25
+offset_top = -4.0
+offset_right = 90.25
+offset_bottom = 66.0
+texture_normal = ExtResource("9_spfyb")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="LevelPopup" parent="UILayer" unique_id=2091839449 instance=ExtResource("10_spfyb")]
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=1797189707]
+layer = -5
+
+[node name="LatarBelakang" type="TextureRect" parent="BackgroundLayer" unique_id=478544166]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_dqhbl")
+expand_mode = 1
+stretch_mode = 6

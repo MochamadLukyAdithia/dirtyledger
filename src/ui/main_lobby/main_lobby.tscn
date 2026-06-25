@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cjbgyxmkea871" path="res://assets/ui_banner/subpoena/Subpoena.png" id="8_u0uk5"]
 [ext_resource type="Texture2D" uid="uid://cnousbf12y12g" path="res://assets/button_home/exit/exit2.png" id="9_0rkk8"]
 [ext_resource type="Texture2D" uid="uid://difhb7blyfr2l" path="res://assets/ui_banner/subpoena/Subpoena1.png" id="9_mjkbr"]
+[ext_resource type="FontFile" uid="uid://okeghkuq83oo" path="res://assets/Font/BarlowSemiCondensed-Medium.ttf" id="10_0rkk8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xe48q"]
 bg_color = Color(0.32481623, 0.14865017, 0.0036213577, 1)
@@ -25,19 +26,13 @@ corner_radius_top_right = 20
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qyhxa"]
 load_path = "res://.godot/imported/Achievement.png-ea9c7aa0c1f1471f0d78022b271f57e4.ctex"
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mufg6"]
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-corner_detail = 15
+[sub_resource type="Gradient" id="Gradient_qyhxa"]
+colors = PackedColorArray(0, 0.85430586, 0, 1, 0.821605, 0.9830286, 2.3102762e-06, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0rkk8"]
-bg_color = Color(0.16558158, 0.54840326, 9.62615e-07, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pefj1"]
+gradient = SubResource("Gradient_qyhxa")
+width = 360
+height = 30
 
 [node name="Control" type="Control" unique_id=531827254]
 layout_mode = 3
@@ -144,18 +139,18 @@ alignment = 1
 
 [node name="username" type="Label" parent="Panel3/HeaderUI" unique_id=1124779024]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("10_0rkk8")
 
 [node name="TimerLabel" type="Label" parent="Panel3/HeaderUI" unique_id=1923114128]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("10_0rkk8")
 horizontal_alignment = 1
 
-[node name="EnergyBar" type="ProgressBar" parent="Panel3/HeaderUI" unique_id=166802123]
+[node name="EnergyBar" type="TextureProgressBar" parent="Panel3/HeaderUI" unique_id=829025399]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_mufg6")
-theme_override_styles/fill = SubResource("StyleBoxFlat_0rkk8")
 value = 100.0
-show_percentage = false
+texture_progress = SubResource("GradientTexture2D_pefj1")
 
 [node name="EnergyLabel" type="Label" parent="Panel3/HeaderUI/EnergyBar" unique_id=1623535000]
 layout_mode = 0
@@ -163,6 +158,7 @@ offset_left = 77.0
 offset_top = 4.0
 offset_right = 272.0
 offset_bottom = 27.0
+theme_override_fonts/font = ExtResource("10_0rkk8")
 horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=882884661]

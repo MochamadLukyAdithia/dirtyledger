@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://d0n2g5sykcne8"]
+
+[ext_resource type="Script" uid="uid://cg0w0prck1o0c" path="res://src/ui/main_lobby/level_popup/level_popup.gd" id="1_ka8sn"]
+[ext_resource type="Texture2D" uid="uid://d3ec20cedtxie" path="res://assets/ui_lobby/level_popup.png" id="2_rossj"]
+[ext_resource type="FontFile" uid="uid://dq7h6ukm32tmk" path="res://assets/Font/BarlowSemiCondensed-MediumItalic.ttf" id="3_ufqqe"]
+[ext_resource type="FontFile" uid="uid://okeghkuq83oo" path="res://assets/Font/BarlowSemiCondensed-Medium.ttf" id="4_02nmp"]
+
+[node name="LevelPopup" type="Control" unique_id=2091839449]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 162.0
+offset_bottom = 98.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ka8sn")
+
+[node name="PanelBg" type="TextureRect" parent="." unique_id=483458630]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_rossj")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelBg" unique_id=1116716573]
+layout_mode = 0
+offset_right = 162.0
+offset_bottom = 98.0
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="EpisodeLabel" type="Label" parent="PanelBg/VBoxContainer" unique_id=1005272251]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ufqqe")
+theme_override_font_sizes/font_size = 12
+text = "Episode 1"
+horizontal_alignment = 1
+
+[node name="TitleLabel" type="Label" parent="PanelBg/VBoxContainer" unique_id=531654549]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_02nmp")
+theme_override_font_sizes/font_size = 15
+text = "The Missing CFO"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelBg/VBoxContainer" unique_id=1842282090]
+custom_minimum_size = Vector2(136, 13)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_02nmp")
+theme_override_font_sizes/font_size = 10
+min_value = 100.0
+value = 100.0
+
+[node name="PlayButton" type="Button" parent="PanelBg/VBoxContainer" unique_id=2009151808]
+custom_minimum_size = Vector2(82, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_02nmp")
+theme_override_font_sizes/font_size = 15
+text = "Play"

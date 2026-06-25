@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://cmaes01rk37ql"]
 
 [ext_resource type="Script" uid="uid://cc30r6bq8pfue" path="res://src/analisis_level/analisis_utama.gd" id="1_jvf1o"]
-[ext_resource type="Texture2D" uid="uid://caopva7ne2d8m" path="res://assets/bg_level/bg_analisis.png" id="2_whndr"]
+[ext_resource type="Texture2D" uid="uid://bv0p28ftk558h" path="res://assets/bg_level/bg_analisis4.png" id="2_27rf8"]
 [ext_resource type="Texture2D" uid="uid://f8qg4bp0ra2q" path="res://assets/Blue/button_rectangle_gradient.svg" id="3_27rf8"]
 [ext_resource type="Texture2D" uid="uid://bw1e4hve77q3m" path="res://assets/Blue/button_rectangle_gloss.svg" id="4_ql7qu"]
 [ext_resource type="Texture2D" uid="uid://bepto6olt2e41" path="res://assets/Blue/button_rectangle_flat.svg" id="5_2fa6c"]
 [ext_resource type="FontFile" uid="uid://bpbm64a16op7q" path="res://assets/Font/Kenney Future.ttf" id="6_sdm66"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b470y"]
-texture = ExtResource("2_whndr")
+texture = ExtResource("2_27rf8")
 
 [node name="analisis_utama" type="Control" unique_id=1125468290]
 layout_mode = 3
@@ -21,10 +21,10 @@ script = ExtResource("1_jvf1o")
 
 [node name="data_comparison" type="Panel" parent="." unique_id=1270358253]
 layout_mode = 0
-offset_left = -99.0
-offset_top = -51.0
-offset_right = 1232.0
-offset_bottom = 761.0
+offset_left = -143.0
+offset_top = -83.0
+offset_right = 1291.2672
+offset_bottom = 792.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_b470y")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="data_comparison" unique_id=662620882]
@@ -98,6 +98,13 @@ theme_override_fonts/font = ExtResource("6_sdm66")
 text = "Back"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=188336132]
+layout_mode = 0
+offset_left = 667.0
+offset_top = 154.0
+offset_right = 872.0
+offset_bottom = 355.0
 
 [connection signal="pressed" from="CanvasLayer/story_panel/close_button" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]

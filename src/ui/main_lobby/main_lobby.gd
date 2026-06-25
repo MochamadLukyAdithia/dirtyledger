@@ -1,7 +1,7 @@
 extends Control
 
 # Menghubungkan langsung ke Node di Scene berdasarkan struktur di atas
-@onready var energy_bar: ProgressBar = $Panel3/HeaderUI/EnergyBar
+@onready var energy_bar: TextureProgressBar = $Panel3/HeaderUI/EnergyBar
 @onready var energy_label: Label = $Panel3/HeaderUI/EnergyBar/EnergyLabel
 @onready var timer_label: Label = $Panel3/HeaderUI/TimerLabel
 
