@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cffbtt4yk3lg6"]
+
+[ext_resource type="PackedScene" uid="uid://bmahagk7ijhew" path="res://src/search_level/base_stage.tscn" id="1_sbgeo"]
+[ext_resource type="Texture2D" uid="uid://dcjg4r5jh7anp" path="res://assets/bg_level/chapter_1/bgc_level1.png" id="2_plj21"]
+[ext_resource type="PackedScene" uid="uid://b74u5or24o16n" path="res://src/search_level/case1/item_tersembunyi.tscn" id="3_plj21"]
+
+[node name="BaseStage" unique_id=1023061199 instance=ExtResource("1_sbgeo")]
+
+[node name="Background" parent="." index="0" unique_id=300225397]
+position = Vector2(575.49994, 202.5)
+scale = Vector2(1.0205078, 1.0146484)
+texture = ExtResource("2_plj21")
+
+[node name="ItemTersembunyi" parent="ItemsContainer" parent_id_path=PackedInt32Array(136120948) index="0" unique_id=1265654602 instance=ExtResource("3_plj21")]
+position = Vector2(-116, -34)
+
+[node name="ItemTersembunyi2" parent="ItemsContainer" parent_id_path=PackedInt32Array(136120948) index="1" unique_id=947801071 instance=ExtResource("3_plj21")]
+position = Vector2(343, 170)
+nama_barang = "Sikat Gigi"
+
+[node name="ItemTersembunyi3" parent="ItemsContainer" parent_id_path=PackedInt32Array(136120948) index="2" unique_id=1158032379 instance=ExtResource("3_plj21")]
+position = Vector2(555, -67)
+nama_barang = "Apel"
+
+[node name="ItemTersembunyi4" parent="ItemsContainer" parent_id_path=PackedInt32Array(136120948) index="3" unique_id=1965100396 instance=ExtResource("3_plj21")]
+position = Vector2(240, -76)
+nama_barang = "Buku"
+
+[node name="ItemTersembunyi5" parent="ItemsContainer" parent_id_path=PackedInt32Array(136120948) index="4" unique_id=1308201036 instance=ExtResource("3_plj21")]
+position = Vector2(-34, 223)
+nama_barang = "Fajar"
+
+[node name="ItemTersembunyi6" parent="ItemsContainer" parent_id_path=PackedInt32Array(136120948) index="5" unique_id=1639692515 instance=ExtResource("3_plj21")]
+position = Vector2(651, 230)
+nama_barang = "Darah"
+
+[node name="ItemTersembunyi7" parent="ItemsContainer" parent_id_path=PackedInt32Array(136120948) index="6" unique_id=2036885440 instance=ExtResource("3_plj21")]
+position = Vector2(48, -135)
+nama_barang = "Jejak Kaki Pembunuh"
+
+[node name="BackgroundLayer" parent="." index="3" unique_id=1101204451]
+layer = -1
+
+[node name="TextureRect" parent="BackgroundLayer" index="0" unique_id=895522713]
+visible = false

@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://b74u5or24o16n"]
+
+[ext_resource type="Texture2D" uid="uid://cp22etryfkea5" path="res://assets/barang/chapter1/level1/topi.png" id="1_o4qo8"]
+
+[sub_resource type="GDScript" id="GDScript_n2im8"]
+script/source = "extends Area2D
+
+# Signal untuk memberi tahu stage utama kalau barang ini berhasil diklik
+signal barang_ditemukan(nama_barang)
+
+@export var nama_barang: String = \"Topi\"
+
+func _ready() -> void:
+	# Mengaktifkan deteksi input mouse pada Area2D
+	input_pickable = true
+
+# Fungsi bawaan Godot untuk mendeteksi interaksi input pada Area2D
+func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
+	# Deteksi klik kiri mouse atau sentuhan layar
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		_di_klik()
+
+func _di_klik() -> void:
+	print(\"Pemain menemukan: \", nama_barang)
+	
+	# Kirim sinyal ke sistem gameplay utama
+	barang_ditemukan.emit(nama_barang)
+	
+	# Efek visual sederhana (misal langsung menghilang)
+	queue_free()
+"
+
+[node name="ItemTersembunyi" type="Area2D" unique_id=947801071]
+script = SubResource("GDScript_n2im8")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1513323611]
+position = Vector2(326, 268.00003)
+scale = Vector2(0.13684642, 0.1368464)
+texture = ExtResource("1_o4qo8")
+
+[node name="Hitbox" type="CollisionPolygon2D" parent="." unique_id=593918111]
+position = Vector2(323.82935, 289.43265)
+scale = Vector2(0.13046466, 0.13046464)
+polygon = PackedVector2Array(-372.6999, -344.6933, -219.52065, -410.64548, -28.046646, -480.8526, 271.92932, -510.63748, 401.70618, -317.03595, 416.5985, 8.469948, 610.2001, 123.35435, 654.8773, 174.4141, 1.7381439, 123.35435, -532.2616, 159.5217, -625.8711, 116.9719, -557.13696, 36.400795, -420.13696, -8.599205, -474.8194, -268.10367)

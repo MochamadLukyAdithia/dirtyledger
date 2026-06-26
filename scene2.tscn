@@ -1,7 +1,29 @@
 [gd_scene format=3 uid="uid://ghwkhgn3gpiy"]
 
-[ext_resource type="Script" uid="uid://cqs7w4bjjnnnb" path="res://scene_2.gd" id="1_g28hq"]
 [ext_resource type="PackedScene" uid="uid://g6aqs4fysyi7" path="res://src/ui/dialog_box/DialogManager.tscn" id="2_3hvph"]
+
+[sub_resource type="GDScript" id="GDScript_g28hq"]
+script/source = "extends Control
+
+@onready var dialog_manager = $DialogManager
+# Data dialog diisi di sini (bisa berbeda-beda tiap scene)
+var list_dialog = [
+	{\"nama\": \"SATRIA (AUDITOR)\", \"teks\": \"Saya Bambang, Auditor Forensik yang ditugaskan.\", \"bg\": \"res://assets/bg_level/bg_analisis.png\",
+		\"karakter\": \"res://assets/character/angela/Angela2.webp\"},
+	{\"nama\": \"SATRIA (AUDITOR)\", \"teks\": \"Laporan kas kecil terlihat tidak sinkron dengan fisik kas.\", \"bg\": \"res://assets/bg_level/bg_analisis.png\",
+		\"karakter\": \"res://assets/character/angela/Angela2.webp\"}
+]
+
+func _ready():
+	# Hubungkan signal ketika dialog selesai untuk pindah scene / lanjut gameplay
+	dialog_manager.dialog_finished.connect(_on_dialog_selesai)
+	
+	# Mulai dialog
+	dialog_manager.start_dialog(list_dialog)
+
+func _on_dialog_selesai():
+	get_tree().change_scene_to_file(\"res://src/analisis_level/analisis.tscn\")
+"
 
 [node name="Scene2" type="Control" unique_id=1610025312]
 layout_mode = 3
@@ -10,6 +32,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_g28hq")
+script = SubResource("GDScript_g28hq")
 
 [node name="DialogManager" parent="." unique_id=1228488748 instance=ExtResource("2_3hvph")]

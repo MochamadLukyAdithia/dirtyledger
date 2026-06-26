@@ -33,7 +33,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	# 1. Logika Timer Menghitung Lama Bermain
 	waktu_berjalan += delta
-	var menit: int = int(waktu_berjalan) / 60
+	var menit: int = int(waktu_berjalan / 60) 
 	var detik: int = int(waktu_berjalan) % 60
 	timer_label.text = "%02d:%02d" % [menit, detik]
 	

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://7nqxwi384ry5"]
+
+[ext_resource type="Script" uid="uid://do8c2aoppbagj" path="res://src/item_tersembunyi/item_tersembunyi.gd" id="1_i6jgb"]
+
+[node name="ItemTersembunyi" type="Area2D" unique_id=833277435]
+script = ExtResource("1_i6jgb")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1513323611]
+
+[node name="Hitbox" type="CollisionPolygon2D" parent="." unique_id=593918111]

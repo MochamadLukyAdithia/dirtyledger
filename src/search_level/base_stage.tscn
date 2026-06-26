@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dbwfl3l7mag5a" path="res://assets/ui_lobby/topbar_ui.png" id="2_esemm"]
 [ext_resource type="Texture2D" uid="uid://bdfpxqxq6oqh7" path="res://assets/ui_level/ui_top.png" id="3_hjkyo"]
 [ext_resource type="Texture2D" uid="uid://djpio2plkh1q1" path="res://assets/ui_level/ui_item_list.png" id="3_k8dui"]
+[ext_resource type="FontFile" uid="uid://c7klvkg7di5ji" path="res://assets/Font/BarlowSemiCondensed-BoldItalic.ttf" id="4_wh8m4"]
 [ext_resource type="FontFile" uid="uid://dq7h6ukm32tmk" path="res://assets/Font/BarlowSemiCondensed-MediumItalic.ttf" id="5_twobc"]
 [ext_resource type="Texture2D" uid="uid://cmeg84gyu8cy1" path="res://assets/ui_level/multip1.png" id="5_wh8m4"]
 [ext_resource type="Texture2D" uid="uid://ogwn56viut55" path="res://assets/ui_level/multip2.png" id="6_twobc"]
@@ -55,11 +56,24 @@ expand_mode = 1
 stretch_mode = 6
 
 [node name="Slot1" type="Label" parent="CanvasLayerUI/BottomUI/HBoxContainer/SlotText1" unique_id=353958222]
-layout_mode = 0
-offset_left = -15.0
-offset_top = 20.0
-offset_right = -14.0
-offset_bottom = 43.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.5
+offset_top = -11.5
+offset_right = 40.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_wh8m4")
+theme_override_font_sizes/font_size = 20
+text = "Buku Tulis"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="SlotText2" type="TextureRect" parent="CanvasLayerUI/BottomUI/HBoxContainer" unique_id=1265786761]
 custom_minimum_size = Vector2(298, 35)
@@ -71,11 +85,24 @@ expand_mode = 1
 stretch_mode = 6
 
 [node name="Slot2" type="Label" parent="CanvasLayerUI/BottomUI/HBoxContainer/SlotText2" unique_id=1512474971]
-layout_mode = 0
-offset_left = -15.0
-offset_top = 20.0
-offset_right = -14.0
-offset_bottom = 43.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.0
+offset_top = -11.5
+offset_right = 17.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_wh8m4")
+theme_override_font_sizes/font_size = 20
+text = "Topi"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="SlotText3" type="TextureRect" parent="CanvasLayerUI/BottomUI/HBoxContainer" unique_id=2101377827]
 custom_minimum_size = Vector2(298, 35)
@@ -87,11 +114,24 @@ expand_mode = 1
 stretch_mode = 6
 
 [node name="Slot3" type="Label" parent="CanvasLayerUI/BottomUI/HBoxContainer/SlotText3" unique_id=1679441384]
-layout_mode = 0
-offset_left = -15.0
-offset_top = 20.0
-offset_right = -14.0
-offset_bottom = 43.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.5
+offset_top = -11.5
+offset_right = 27.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_wh8m4")
+theme_override_font_sizes/font_size = 20
+text = "Laptop"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TopUI" type="PanelContainer" parent="CanvasLayerUI" unique_id=390697720]
 anchors_preset = 10
@@ -135,7 +175,6 @@ theme_override_colors/font_outline_color = Color(0.333543, 0.17068782, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("5_twobc")
 theme_override_font_sizes/font_size = 20
-text = "00:00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -212,7 +251,6 @@ grow_vertical = 2
 size_flags_horizontal = 10
 theme_override_fonts/font = ExtResource("5_twobc")
 theme_override_font_sizes/font_size = 20
-text = "150.000"
 horizontal_alignment = 1
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=1101204451]
